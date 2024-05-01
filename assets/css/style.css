@@ -1,0 +1,17 @@
+ #tabuleiroTetris { 
+    border: 1px solid black;  
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 27vh;
+}                                                  
+                                                      
+.celulaTd {                                           
+    width: 2.5vh;                                                                 
+    height: 2.5vh;                                                                     	
+    border: solid 1px black;                                                                       
+}                                                                          
+                                                                           
+.ponto{                                                                                
+    background-color: black;                                                                     
+ }

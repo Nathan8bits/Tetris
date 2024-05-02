@@ -1,7 +1,7 @@
 //import { objCss} from './objCss.js';
 
 let mapa = document.querySelector("#tabuleiroTetris");
-let btnRot, btnBaixo, btnEsq, btnDir;
+let btnRot, btnBixo, btnEsq, btnDir;
 let celulaTd;
 
 let tamX =10, tamY=20, matriz= new Array(tamX*tamY);

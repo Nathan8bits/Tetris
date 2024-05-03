@@ -45,6 +45,24 @@ export function validadePeca(peca) {
    return false;
 }
 
+export function verificarColisao(peca, montante) {
+    if(montante === undefined) {
+            console.log("ISSO EH ZERO REOLTORB")
+            return true;
+    }
+       // console.log("montante" + montante)
+    
+      for(let i =0; i <peca.length; i++) {
+                      //console.log("passou ")
+          for(let j=0; j<montante.length; j++) {
+              if(peca[i] == montante[j]) {
+               console.log("COLIDIU########################")
+                  return false;
+              }
+          }
+      }
+      return true;
+  }
   
  /*
 function validadePecas(pecas){

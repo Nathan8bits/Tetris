@@ -1,4 +1,4 @@
-import {transladarPeca, verificarColisao, validadePecas, validadePeca, pecaAleatoria, rotacionarPeca, rotacao, quadrante, sinalQuadrante, distancia} from "./controleEstado.js"
+import {transladarPeca, validadePecas, validadePeca, pecaAleatoria, rotacionarPeca, rotacao, quadrante, sinalQuadrante, distancia} from "./controleEstado.js"
 
 let mapa = document.querySelector("#tabuleiroTetris");
 let celulaTd;
@@ -6,8 +6,6 @@ let celulaTd;
 let btnRot, btnBaixo, btnEsq, btnDir;
 
 let tamX =10, tamY=20, matriz= new Array(tamX*tamY);
-let montante = [];
-console.log(montante)
 
 let pecas =[
     							[
@@ -95,32 +93,6 @@ function main () {
 main();
 
 
-setInterval(function(){
-		//atualizando frame
-		apagarPeca(peca);
-		let p = peca;
-   peca = transladarPeca(peca, [0, 1]);
-   
-   if(peca == p) {
-   				//gambiarra pq o montante.push() nao funcionou
-   				//montante = p[0]
-   				for(let i=0; i<p.length; i++){
-   				    montante.push(p[i]);
-   				}
-       
-       peca = pecaAleatoria(pecas);
-       console.log("MONTANTE: "+montante+"#############################")
-       console.log(montante[0][0] +" ; "+montante[1])
-       console.log(p[0][0] +" ; "+p[0][1])
-       printPeca(montante, celulaTd)
-   }
-   
-   printPeca(peca, celulaTd);
-    
-}, 1000);
-
-
-
 function criarTabuleiro( ) {
     const matrizMapa = document.createElement('table');
     matrizMapa.setAttribute('class', 'matrizMapa');
@@ -140,21 +112,21 @@ function criarTabuleiro( ) {
     	// matrizMapa deve ser o retorno dessa funcao
   }// fim da criarTabuleiro
 
-function printPeca(pecaP, celula) {
-		if(validadePecas(pecaP,montante)) {
+function printPeca(peca, celula) {
+		if(validadePecas(peca)) {
 		console.log("print")
-   			for (let i = 0; i < pecaP.length; i++) {
+   			for (let i = 0; i < peca.length; i++) {
      // celula[peca[i][1] * tamY + peca[i][0]].classList.add("ponto");
-     	celula[pecaP[i][1] * tamX + pecaP[i][0]].classList.add("ponto");
+     	celula[peca[i][1] * tamX + peca[i][0]].classList.add("ponto");
     		}
   		} else {
-  					console.log(pecaP)
+  					console.log(peca)
   		    console.log("NAO PRINTAR")
   		}
   }
   
 function apagarPeca(peca) {
-		if(validadePecas(peca, montante)) {
+		if(validadePecas(peca)) {
 				console.log("apagar")
 		    for (let i = 0; i < peca.length; i++) 
    			 {

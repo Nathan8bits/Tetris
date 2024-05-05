@@ -55,7 +55,7 @@ export function verificarColisao(peca, montante) {
       for(let i =0; i <peca.length; i++) {
                       //console.log("passou ")
           for(let j=0; j<montante.length; j++) {
-              if(peca[i][0] == montante[j][0] && peca[i][1] == montante[i][1]) {
+              if(peca[i][0] == montante[j][0] && peca[i][1] == montante[j][1]) {
                console.log("COLIDIU########################")
                   return false;
               }

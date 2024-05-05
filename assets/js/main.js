@@ -60,28 +60,44 @@ let peca = pecaAleatoria(pecas);
 btnRot = document.querySelector("#btnRotacao")
     btnRot.addEventListener('click', function() { 
         apagarPeca(peca);
+        let p = peca;
         peca = rotacionarPeca(	peca);
+        if(verificarColisao(peca, montante)) {
+            peca = p;
+        }
         printPeca(peca, celulaTd);
     })
     
     btnEsq = document.querySelector("#btnEsquerda")
     btnEsq.addEventListener('click', function() { 
-    			apagarPeca(peca);
-      		peca = transladarPeca(peca, [-1,0]);
+    			   apagarPeca(peca);
+        let p = peca;
+      	 	peca = transladarPeca(peca, [-1,0]);
+        if(verificarColisao(peca, montante)) {
+            peca = p;
+        }
         printPeca(peca, celulaTd, tamX, tamY);
     })
     
     btnDir = document.querySelector("#btnDireita");
     btnDir.addEventListener('click', function() { 
-      		apagarPeca(peca);    
-      		peca = transladarPeca(peca, [1, 0]);
+      		apagarPeca(peca);
+        let p = peca;
+        peca = transladarPeca(peca, [1, 0]);
+        if(verificarColisao(peca, montante)) {
+            peca = p;
+        }
         printPeca(peca, celulaTd);
     })
     
     btnBaixo = document.querySelector("#btnBaixo")
     btnBaixo.addEventListener('click', function() { 
     			apagarPeca(peca);
-      		peca = transladarPeca(peca, [0, 1]);
+        let p = peca;
+        peca = transladarPeca(peca, [0, 1]);
+        if(verificarColisao(peca, montante)) {
+            peca = p;
+        }
         printPeca(peca, celulaTd);
     })
 
@@ -97,11 +113,11 @@ main();
 
 setInterval(function(){
 		//atualizando frame
-		apagarPeca(peca);
-		let p = peca;
+		  apagarPeca(peca);
+		  let p = peca;
    peca = transladarPeca(peca, [0, 1]);
    
-   if(peca == p) {
+   if(peca == p || verificarColisao(peca, montante)) {
    				//gambiarra pq o montante.push() nao funcionou
    				//montante = p[0]
    				for(let i=0; i<p.length; i++){

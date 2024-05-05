@@ -113,8 +113,8 @@ main();
 
 setInterval(function(){
 		//atualizando frame
-		  apagarPeca(peca);
-		  let p = peca;
+   apagarPeca(peca);
+   let p = peca;
    peca = transladarPeca(peca, [0, 1]);
    
    if(peca == p || verificarColisao(peca, montante)) {

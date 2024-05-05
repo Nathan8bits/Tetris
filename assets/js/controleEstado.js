@@ -87,6 +87,28 @@ function validadePeca(peca) {
    return false;
 }
   */
+
+export function  dropLinha(matriz) {
+    let linha = verificarLinha(matriz)
+    let matrizDrop = []
+    
+    if(linha == null) {
+        return matriz;
+    }
+    
+    while(linha != null)  {
+        for(let i=0; i<matriz.length; i++){
+            if(matriz[i][1] != linha  && matriz[i][1] < linha){
+                matrizDrop.push([matriz[i][0], matriz[i][1]+1])
+            } else if(matriz[i][1] != linha) {
+                matrizDrop.push(matriz[i])
+            }
+        }
+        linha = verificarLinha(matrizDrop);
+    }
+    
+    return matrizDrop;
+}
   
 export function verificarLinha(matriz) {
     for(let i=0; i<matriz.length; i++) {

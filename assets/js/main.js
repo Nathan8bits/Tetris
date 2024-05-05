@@ -1,4 +1,4 @@
-import {transladarPeca, verificarColisao, validadePecas, validadePeca, pecaAleatoria, rotacionarPeca, rotacao, quadrante, sinalQuadrante, distancia} from "./controleEstado.js"
+import {dropLinha, transladarPeca, verificarColisao, validadePecas, validadePeca, pecaAleatoria, rotacionarPeca, rotacao, quadrante, sinalQuadrante, distancia} from "./controleEstado.js"
 
 let mapa = document.querySelector("#tabuleiroTetris");
 let celulaTd;

@@ -2,8 +2,6 @@ import {dropLinha, transladarPeca, verificarColisao, validadePecas, validadePeca
 
 let mapa = document.querySelector("#tabuleiroTetris");
 let celulaTd;
-let pontoHtml = document.querySelector("#ponto")
-let ponto = 0;//pontoHTML.	innerHTML = ponto
 
 let btnRot, btnBaixo, btnEsq, btnDir;
 
@@ -115,12 +113,8 @@ main();
 
 setInterval(function(){
 		//atualizando frame
-    
-    pontoHtml.textContent = `${ponto}`
-
-    
-		  apagarPeca(peca);
-		  let p = peca;
+   apagarPeca(peca);
+   let p = peca;
    peca = transladarPeca(peca, [0, 1]);
    
    if(peca == p || verificarColisao(peca, montante)) {
@@ -129,28 +123,17 @@ setInterval(function(){
    				for(let i=0; i<p.length; i++){
    				    montante.push(p[i]);
    				}
-       apagarPeca(montante, celulaTd)
-       
-       let montanteDrop = montante;
-       montante = dropLinha(montante);
-       if(montanteDrop != montante){
-           printPeca([5, 4], celulaTd)
-           ponto++
-           pontoHtml.textContent = `${ponto}`
-       }
        
        peca = pecaAleatoria(pecas);
-       
-       //console.log("MONTANTE: "+montante+"#############################")
-       //console.log(montante[0][0] +" ; "+montante[1])
-       //console.log(p[0][0] +" ; "+p[0][1]);
-       
+       console.log("MONTANTE: "+montante+"#############################")
+       console.log(montante[0][0] +" ; "+montante[1])
+       console.log(p[0][0] +" ; "+p[0][1])
        printPeca(montante, celulaTd)
    }
    
    printPeca(peca, celulaTd);
     
-}, 500);
+}, 1000);
 
 
 

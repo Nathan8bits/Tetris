@@ -96,7 +96,7 @@ export function  dropLinha(matriz) {
         return matriz;
     }
     
-    while(linha != null)  {
+    if(linha != null)  {
         for(let i=0; i<matriz.length; i++){
             if(matriz[i][1] != linha  && matriz[i][1] < linha){
                 matrizDrop.push([matriz[i][0], matriz[i][1]+1])

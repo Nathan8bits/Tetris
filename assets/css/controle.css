@@ -1,15 +1,15 @@
 * {
-        padding: 0;
-            margin: 0;
-            }
+    padding: 0;
+    margin: 0;
+  }
 
 #controle {   
     position: relative;           
     display: flex;             
     align-items: center;             
     justify-content: center;                     
-    width: 25vh; /* Ajuste conforme necessário */                        
-    height: 25vh; /* Ajuste conforme necessário */                            
+    width: 20vh; /* Ajuste conforme necessário */                        
+    height: 20vh; /* Ajuste conforme necessário */                            
     background-color: #333; /* Cor de fundo */                              
     border: 2px solid #000; /* Borda */                                
     border-radius: 30px; /* Cantos arredondados */                                  
@@ -20,16 +20,16 @@
                                     
 #controle button {
                                     	
-    font-size: 30px;
-                                        	
-    text-align: center;
-                                              
+    font-size: 3vh;                       	
+    text-align: center;                                              
     position: absolute;
-                                                
-    width: 60px; /* Ajuste conforme necessário */
+    text-align: center;
+                                               
+    width: 6vh; /* Ajuste conforme necessário */
                                                   
-    height: 60px; /* Ajuste conforme necessário */
-                                                    
+    height: 6vh; /* Ajuste conforme necessário */
+                                      
+       
     border: none;
                                                       
     border-radius: 50%; /* Botões redondos */
@@ -78,4 +78,3 @@
     text-align: center;
                                                                                                                                         
 }
-
